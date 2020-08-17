@@ -3,7 +3,7 @@ class Staff::Authenticator
         @staff_member = staff_member
     end
 
-    def autenticate(raw_password)
+    def authenticate(raw_password)
         @staff_member &&
             !@staff_member.suspended? &&
             @staff_member.hashed_password &&
