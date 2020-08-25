@@ -21,4 +21,9 @@ class Admin::SessionsController < Admin::Base
             render action: "new"
         end
     end
+
+    def destroy
+        session.delete(:administrator_id)
+        redirect_to :admin_root
+    end
 end
