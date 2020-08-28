@@ -14,7 +14,7 @@ class Admin::SessionsController < Admin::Base
             admin_member =
                 Administrator.find_by("LOWER(email) = ?", @form.email.downcase)
         end
-        if admin_member
+        if Admin::Authenticator.new(admin_member).authenticate(@form.password)
             session[:administrator_id] = admin_member.id
             redirect_to :admin_root
         else
