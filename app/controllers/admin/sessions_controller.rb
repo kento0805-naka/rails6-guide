@@ -16,14 +16,17 @@ class Admin::SessionsController < Admin::Base
         end
         if Admin::Authenticator.new(admin_member).authenticate(@form.password)
             session[:administrator_id] = admin_member.id
+            flash.notice = "ログインしました"
             redirect_to :admin_root
         else
+            flash.now.alert = "メールアドレスまたはパスワードが正しくありません"
             render action: "new"
         end
     end
 
     def destroy
         session.delete(:administrator_id)
+        flash.notice = "ログアウトしました"
         redirect_to :admin_root
     end
 end
