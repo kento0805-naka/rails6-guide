@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  config = Rails.application.config.baukis2
+
   constraints host: config[:staff][:host] do
     namespace :staff, path: config[:staff][:path] do
       root "top#index"
