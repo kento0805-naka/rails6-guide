@@ -9,7 +9,7 @@ StaffMember.create!(
 )
 
 family_names = %w{
-    佐藤:サトウ：sato
+    佐藤:サトウ:sato
     鈴木:スズキ:suzuki
     高橋:タカハシ:takahashi
     田中:タナカ:tanaka
@@ -20,7 +20,7 @@ given_names = %w{
     三郎:サブロウ:saburo
     松子:マツコ:matsuko
     竹子:タケコ:takeko
-    梅子:ウメコ：umeko
+    梅子:ウメコ:umeko
 }
 
 20.times do |n|
